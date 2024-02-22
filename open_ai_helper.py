@@ -1,17 +1,15 @@
-import openai
+from openai import OpenAI
 from secret_key import openai_key
 import json
 import pandas as pd
 
-openai.api_key = openai_key
+client = OpenAI(api_key=openai_key)
 
 def extract_financial_data(text):
     prompt = get_prompt_financial() + text
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user","content": prompt}]
-    )
-    content = response.choices[0]['message']['content']
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
+    messages=[{"role": "user","content": prompt}])
+    content = response.choices[0].message.content
 
     try:
         data = json.loads(content)
