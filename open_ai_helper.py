@@ -23,8 +23,6 @@ def extract_financial_data(text):
         "Value": ["", "", "", "", ""]
     })
 
-
-
 def get_prompt_financial():
     return '''Please retrieve company name, revenue, net income and earnings per share (a.k.a. EPS)
     from the following news article. If you can't find the information from this article 
@@ -40,7 +38,7 @@ def get_prompt_financial():
         "EPS": "2.1 $"
     }
     News Article:
-    ============
+    =====================
 
     '''
 
