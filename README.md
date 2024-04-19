@@ -11,3 +11,4 @@ This tool is a streamlit based app that uses openai api to extract key financial
 </pre>
 
 You need to create an account on openai website. You will get inital 5$ free credits which is more than enough for this project. Once you get an api key from your account add it to secret_key.py
+
